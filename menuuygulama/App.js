@@ -1,23 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
+import CategoriesScreen from './screen/CategoriesScreen';
 
 export default function App() {
-
-  const courses=[
-    {name:'Çin Mutfağı',id:1},
-    {name:'Makarnalar',id:2},
-    {name:'Tavuk Çeşitleri',id:3},
-    {name:'Aperatifler',id:4},
-    {name:'Et Çeşitleri',id:5}
-  ]
-
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Restaurant Menü</Text>
-      <Text style={styles.content}>ATALAY BERKE CİN</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  return (<CategoriesScreen/>);
   
 }
 

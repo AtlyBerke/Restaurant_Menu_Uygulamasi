@@ -7,7 +7,7 @@ export default function CategoriesScreen() {
   function renderCategoryItem(itemData) {
     console.log(itemData.item);
     return (
-      <CategoryGrid title={itemData.item.title} />
+      <CategoryGrid title={itemData.item.title} color={itemData.item.color} />
     );
   }
 
@@ -16,7 +16,7 @@ export default function CategoriesScreen() {
       data={CATEGORIES}
       keyExtractor={(item) => item.id}
       renderItem={renderCategoryItem}
-      numColumns={1}
+      numColumns={2}
     />
   );
 }

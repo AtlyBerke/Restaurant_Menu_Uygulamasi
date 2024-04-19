@@ -3,6 +3,7 @@ import { FlatList, StyleSheet, Text, View } from 'react-native';
 import CategoriesScreen from './screen/CategoriesScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import FoodOverviewScreen from './screen/FoodOverviewScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,6 +12,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Categories" component={CategoriesScreen} />
+        <Stack.Screen name="FoodOverview" component={FoodOverviewScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

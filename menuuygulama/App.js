@@ -6,19 +6,28 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import FoodOverviewScreen from './screen/FoodOverviewScreen';
 
 const Stack = createNativeStackNavigator();
-
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Categories" component={CategoriesScreen} />
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: { backgroundColor: 'blue' },
+          headerTintColor: 'white',
+          contentStyle: { backgroundColor: 'lightblue' },
+        }}
+      >
+        <Stack.Screen
+          name="Categories"
+          component={CategoriesScreen}
+          options={{
+            title: 'Tüm Kategoriler',
+          }}
+        />
         <Stack.Screen name="FoodOverview" component={FoodOverviewScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
-
 
 const styles = StyleSheet.create({
   container: {
@@ -26,17 +35,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor:'aqua',
-    
-   
   },
-  title:{
-    fontSize:40,
-    color:'white',
-    marginBottom:15,
-    
-  },
-  content:{
-    fontSize:25,
-  }
 });

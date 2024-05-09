@@ -1,13 +1,41 @@
-import { StyleSheet, Text, View, ScrollView,Image } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  Image,
+  Pressable,
+} from 'react-native';
 import React from 'react';
+import { useLayoutEffect } from 'react';
+import { FontAwesome6 } from '@expo/vector-icons';
 
 import { FOODS } from '../data/dummy-data';
 import FoodIngredients from '../components/FoodIngredients';
 
-export default function FoodDetailScreen({ route }) {
+export default function FoodDetailScreen({ route, navigation }) {
   const foodId = route.params.foodId;
   const selectedFood = FOODS.find((food) => food.id === foodId);
   console.log(selectedFood);
+
+  const pressHandler = () => {
+    console.log('Tıklandı!');
+  };
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => {
+        return (
+          <Pressable
+            onPress={pressHandler}
+            style={({ pressed }) => (pressed ? styles.pressed : null)}
+          >
+          <FontAwesome6 name="face-grin-stars" size={24} color="yellow" />
+          </Pressable>
+        );
+      },
+    });
+  }, [navigation]);
 
   return (
     <ScrollView style={styles.rootContainer}>
@@ -19,7 +47,7 @@ export default function FoodDetailScreen({ route }) {
       </View>
       <View style={styles.listContainer}>
         <View style={styles.subTitleContainer}>
-          <Text style={styles.subTitle}>İçindekiler</Text>
+          <Text style={styles.subTitle}>İçinkiler</Text>
         </View>
         <FoodIngredients data={selectedFood.ingredients} />
       </View>
@@ -37,7 +65,6 @@ const styles = StyleSheet.create({
     height: 300,
   },
   title: {
-    color:'black',
     textAlign: 'center',
     fontSize: 24,
     fontWeight: 'bold',
@@ -51,9 +78,9 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   detailItem: {
-    marginHorizontal: 5,
-    fontSize: 15,
-    color: 'black',
+    marginHorizontal: 4,
+    fontSize: 12,
+    color: 'red',
   },
   listContainer: {
     width: '100%',
@@ -62,12 +89,15 @@ const styles = StyleSheet.create({
   subTitleContainer: {
     alignItems: 'center',
     borderBottomWidth: 2,
-    borderBottomColor: 'red',
+    borderBottomColor: 'orange',
     marginVertical: 5,
   },
   subTitle: {
-    color: 'red',
+    color: 'orange',
     fontSize: 24,
     fontWeight: 'bold',
+  },
+  pressed: {
+    opacity: 0.5,
   },
 });

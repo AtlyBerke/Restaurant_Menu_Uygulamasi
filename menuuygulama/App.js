@@ -8,18 +8,42 @@ import FoodDetailScreen from './screen/FoodDetailScreen';
 import 'react-native-gesture-handler';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import FavoritesScreen from './screen/FavoritesScreen';
+import { FontAwesome6 } from '@expo/vector-icons';
+
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
 function DrawerNavigator() {
   return (
-    <Drawer.Navigator>
-      <Drawer.Screen name="Categories" component={CategoriesScreen} />
-      <Drawer.Screen name="Favorites" component={FavoritesScreen} />
+    <Drawer.Navigator
+      screenOptions={{
+        headerStyle: { backgroundColor: 'blue' },
+        headerTintColor: 'white',
+      }}
+    >
+      <Drawer.Screen
+        name="Categories"
+        component={CategoriesScreen}
+        options={{
+          title: 'Tüm Kategoriler',
+          drawerIcon: () => <FontAwesome6 name="list" size={24} color="yellow" />,
+        }}
+      />
+     <Drawer.Screen
+        name="Favorites"
+        component={FavoritesScreen}
+        options={{
+          title: 'Favoriler',
+          drawerIcon: () => (
+            <FontAwesome6 name="face-grin-stars" size={24} color="yellow" />
+          ),
+        }}
+      />
     </Drawer.Navigator>
   );
 }
+
 
 export default function App() {
   return (

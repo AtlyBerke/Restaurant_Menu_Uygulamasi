@@ -5,8 +5,22 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import FoodOverviewScreen from './screen/FoodOverviewScreen';
 import FoodDetailScreen from './screen/FoodDetailScreen';
+import 'react-native-gesture-handler';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import FavoritesScreen from './screen/FavoritesScreen';
 
 const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
+
+function DrawerNavigator() {
+  return (
+    <Drawer.Navigator>
+      <Drawer.Screen name="Categories" component={CategoriesScreen} />
+      <Drawer.Screen name="Favorites" component={FavoritesScreen} />
+    </Drawer.Navigator>
+  );
+}
+
 export default function App() {
   return (
     <NavigationContainer>
@@ -17,13 +31,15 @@ export default function App() {
           contentStyle: { backgroundColor: 'lightblue' },
         }}
       >
-        <Stack.Screen
-          name="Categories"
-          component={CategoriesScreen}
+         
+         <Stack.Screen
+          name="Drawer"
+          component={DrawerNavigator}
           options={{
-            title: 'Tüm Kategoriler',
+           headerShown:false,
           }}
         />
+       
         <Stack.Screen name="FoodOverview" component={FoodOverviewScreen} />
         <Stack.Screen
           name="FoodDetail"

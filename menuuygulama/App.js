@@ -18,8 +18,8 @@ function DrawerNavigator() {
   return (
     <Drawer.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: 'blue' },
-        headerTintColor: 'white',
+        headerStyle: { backgroundColor: '#0077b6' },
+        headerTintColor: '#000814',
       }}
     >
       <Drawer.Screen
@@ -51,9 +51,9 @@ export default function App() {
      <FavoritesContextProvider>
       <Stack.Navigator
         screenOptions={{
-          headerStyle: { backgroundColor: 'blue' },
+          headerStyle: { backgroundColor: '#000814' },
           headerTintColor: 'white',
-          contentStyle: { backgroundColor: 'lightblue' },
+          contentStyle: { backgroundColor: '38a3a5' },
         }}
       >
          
@@ -82,7 +82,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#38a3a5',
     alignItems: 'center',
     justifyContent: 'center',
   },

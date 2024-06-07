@@ -43,9 +43,9 @@ export default function FoodItem({
 const styles = StyleSheet.create({
   foodItem:{
     margin: 15,
-    backgroundColor: 'white',
+    backgroundColor: '#5fa8d3',
     elevation: 4,
-    shadowColor: '#171717',
+    shadowColor: '#1717',
     shadowOffset: { width: -2, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 3,

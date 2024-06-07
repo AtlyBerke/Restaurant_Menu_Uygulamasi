@@ -4,15 +4,16 @@ import Food from '../models/food';
 
 
 export const CATEGORIES = [
-  new Category('c1', 'İtalyan', 'pink'),
-  new Category('c2', 'Aperatif', 'darkpink'),
-  new Category('c3', 'Hamburger', 'brown'),
-  new Category('c4', 'Alman', 'yellow'),
-  new Category('c5', 'Diyet', 'blue'),
-  new Category('c6', 'Egzotik', 'green'),
-  new Category('c7', 'Kahvaltı', 'lightblue'),
-  new Category('c8', 'İçecekler', 'lightgreen'),
+  new Category('c1', 'İtalyan', '#4cc9f0'), // Pembe renk
+  new Category('c2', 'Aperatif', '#4895ef'), // Koyu pembe renk
+  new Category('c3', 'Hamburger', '#4361ee'), // Kahverengi renk
+  new Category('c4', 'Alman', '#3f37c9'), // Sarı renk
+  new Category('c5', 'Diyet', '#4169e1'), // Mavi renk
+  new Category('c6', 'Egzotik', '#7209b7'), // Yeşil renk
+  new Category('c7', 'Kahvaltı', '#5fa8d3'), // Açık mavi renk
+  new Category('c8', 'İçecekler', '#b8b8ff'), // Açık yeşil renk
 ];
+
 
 export const FOODS = [
   new Food(

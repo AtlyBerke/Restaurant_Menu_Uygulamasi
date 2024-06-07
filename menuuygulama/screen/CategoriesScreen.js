@@ -13,6 +13,7 @@ export default function CategoriesScreen({ navigation }) {
 
     console.log(itemData.item);
     return (
+
       <CategoryGrid title={itemData.item.title} color={itemData.item.color} pressFood={pressHandler} />
     );
   }

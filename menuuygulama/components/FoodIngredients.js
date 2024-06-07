@@ -11,7 +11,7 @@ export default function FoodIngredients({ data }) {
 
 const styles = StyleSheet.create({
   listItem: {
-    backgroundColor: 'yellow',
+    backgroundColor: '#00b4d8',
     marginVertical: 5,
     marginHorizontal: 14,
     borderRadius: 10,

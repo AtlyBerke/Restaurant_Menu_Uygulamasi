@@ -58,7 +58,7 @@ export default function FoodDetailScreen({ route, navigation }) {
       </View>
       <View style={styles.listContainer}>
         <View style={styles.subTitleContainer}>
-          <Text style={styles.subTitle}>İçinkiler</Text>
+          <Text style={styles.subTitle}>İçindekiler</Text>
         </View>
         <FoodIngredients data={selectedFood.ingredients} />
       </View>
@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: 300,
+    backgroundColor:'#00b4d8',
   },
   title: {
     textAlign: 'center',
@@ -90,8 +91,8 @@ const styles = StyleSheet.create({
   },
   detailItem: {
     marginHorizontal: 4,
-    fontSize: 12,
-    color: 'red',
+    fontSize: 16,
+    color: 'black',
   },
   listContainer: {
     width: '100%',
@@ -100,11 +101,11 @@ const styles = StyleSheet.create({
   subTitleContainer: {
     alignItems: 'center',
     borderBottomWidth: 2,
-    borderBottomColor: 'orange',
+    borderBottomColor: '#023e8a',
     marginVertical: 5,
   },
   subTitle: {
-    color: 'orange',
+    color: '#023e8a',
     fontSize: 24,
     fontWeight: 'bold',
   },

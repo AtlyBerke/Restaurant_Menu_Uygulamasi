@@ -10,6 +10,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import FavoritesScreen from './screen/FavoritesScreen';
 import { FontAwesome6 } from '@expo/vector-icons';
 import FavoritesContextProvider from './store/favoritescontext';
+import WelcomeScreen from './screen/WelcomeScreen';
+
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -53,18 +55,23 @@ export default function App() {
         screenOptions={{
           headerStyle: { backgroundColor: '#000814' },
           headerTintColor: 'white',
-          contentStyle: { backgroundColor: '38a3a5' },
+          contentStyle: { backgroundColor: '#fcbf49' },
         }}
       >
-         
-         <Stack.Screen
+        <Stack.Screen
+          name="Welcome"
+          component={WelcomeScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
           name="Drawer"
           component={DrawerNavigator}
           options={{
-           headerShown:false,
+            headerShown: false,
           }}
         />
-       
         <Stack.Screen name="FoodOverview" component={FoodOverviewScreen} />
         <Stack.Screen
           name="FoodDetail"

@@ -21,7 +21,7 @@ export default function FoodOverviewScreen({ route, navigation }) {
     });
   }, [navigation, categoryId]);
 
-  //   console.log(displayedFoods);
+
 
 
 
